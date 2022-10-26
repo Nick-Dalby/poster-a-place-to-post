@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { UserContext } from '@lib/context'
 
 const Navbar = () => {
-  const user = true
-  const username = true
+  const { user, username } = useContext(UserContext)
 
   return (
     <nav className="navbar">
@@ -16,14 +17,23 @@ const Navbar = () => {
         {/* user signed in with username */}
         {username && (
           <>
-            <li className="push-left">
+           <li className="push-left">
+              <button>Sign Out</button>
+            </li>
+            <li >
               <Link href="/admin">
                 <button className="btn-blue">Write Posts</button>
               </Link>
             </li>
             <li>
               <Link href={`/${username}`}>
-                <Image className='avatar' src={user?.photoURL || '/avatar.png'} width={50} height={50} alt=''/>
+                <Image
+                  className="avatar"
+                  src={user?.photoURL || '/avatar.png'}
+                  width={50}
+                  height={50}
+                  alt=""
+                />
               </Link>
             </li>
           </>

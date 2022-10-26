@@ -1,10 +1,12 @@
 import { auth, firestore, googleAuthProvider } from '@lib/firebase'
 import { signInWithPopup, signInAnonymously, signOut } from 'firebase/auth'
 import Image from 'next/image'
+import { useContext } from 'react'
+import { UserContext } from '@lib/context'
 
 const EnterPage = () => {
-  const user = null
-  const username = null
+  const {user, username } = useContext(UserContext)
+
 
   // sign-in with google button
   function SignInButton() {
@@ -21,7 +23,7 @@ const EnterPage = () => {
 
   // sign-out button
   function SignOutButton() {
-    return <button className="" onClick={() => signOut()}>Sign Out</button>
+    return <button className="" onClick={() => signOut(auth)}>Sign Out</button>
   }
 
   // username form
