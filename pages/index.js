@@ -1,19 +1,11 @@
 import Link from 'next/link'
 import Loader from '../components/Loader'
+import toast from 'react-hot-toast'
 
 export default function Home() {
   return (
     <div>
-      <Loader show />
-      <h1>hi!</h1>
-      <Link
-        href={{
-          pathname: '/[username]',
-          query: { username: 'nico' },
-        }}
-      >
-        click this
-      </Link>
+      <button onClick={() => toast.success('toasty!')}>click for toast</button>
     </div>
   )
 }

@@ -84,10 +84,11 @@ code {
   height: 100%;
 }
 
-.navbar img {
+.navbar .avatar {
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  border: 1px solid black;
   cursor: pointer;
 }
 
