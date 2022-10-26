@@ -23,7 +23,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link href={`/${username}`}>
-                <Image className='avatar' src={user?.photoURL}  alt=''/>
+                <Image className='avatar' src={user?.photoURL || '/avatar.png'} width={50} height={50} alt=''/>
               </Link>
             </li>
           </>
