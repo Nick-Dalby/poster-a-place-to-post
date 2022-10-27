@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-const PostFeed = ({ posts }) => {
+const PostFeed = ({ posts, admin }) => {
   return (
     posts ? posts.map((post) => <PostItem post={post} key={post.slug} admin={admin}/>) : ''
   )
@@ -13,16 +13,16 @@ function PostItem({post, admin = false}) {
   return (
     <div className="card">
       <Link href={`/${post.username}`} >
-        <strong>By @ {post.username}</strong>
+        <strong>By @{post.username}</strong>
       </Link>
      
       <Link href={`/${post.username}/${post.slug}`} >
-        {post.title}
+        <h2>{post.title}</h2>
       </Link>
 
     <footer>
     <span>{wordCount} words. {minutesToRead} min read</span>
-    <span>❤️ {post.heartCount} Hearts</span>
+    <span className="push-left">❤️ {post.heartCount || 0} Hearts</span>
     </footer>
     </div>
   )
