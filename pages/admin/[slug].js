@@ -1,4 +1,11 @@
+import MetaTags from '@components/MetaTags'
+
 const AdminPostEdit = () => {
-  return <div>edit post</div>
+  return (
+    <main>
+      <MetaTags />
+      <div>edit post</div>
+    </main>
+  )
 }
 export default AdminPostEdit
