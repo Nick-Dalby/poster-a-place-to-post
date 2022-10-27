@@ -180,11 +180,9 @@ button.btn-logo {
 }
 
 .card-img-center {
-  width:20%;
   display:block;
   margin:auto;
   border-radius: 50%;
-  max-width: 150px;
 }
 
 .card-info {
