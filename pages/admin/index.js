@@ -1,5 +1,5 @@
 import AuthCheck from '@components/AuthCheck'
-import MetaTags from '@components/Metatags'
+import MetaTags from '@components/MetaTags'
 import PostFeed from '@components/PostFeed'
 import { UserContext } from '@lib/context'
 import { auth } from '@lib/firebase'

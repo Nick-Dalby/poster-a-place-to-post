@@ -63,6 +63,7 @@ const Post = (props) => {
 
   const post = realtimePost || props.post
 
+
   return (
     <main className={styles.container}>
       <section>

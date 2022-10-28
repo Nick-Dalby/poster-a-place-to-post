@@ -132,7 +132,7 @@ button[disabled]{
   cursor: not-allowed;
 }
 
-button.btn-blue {
+button.btn-blue, .btn-blue {
   background-color: var(--color-blue);
   color: white;
 }
