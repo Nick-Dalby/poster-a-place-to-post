@@ -95,6 +95,12 @@ code {
   
 }
 
+@media (max-width: 500px) {
+  .navbar .avatar {
+    display: none;
+  }
+}
+
 /* Buttons */
 
 .btn, button {
