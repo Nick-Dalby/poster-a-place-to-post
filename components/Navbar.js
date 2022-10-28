@@ -21,7 +21,7 @@ const Navbar = () => {
       <ul>
         <li>
           <Link href="/">
-            <button className="btn-logo">Feed</button>
+            <button className="btn-logo">Poster</button>
           </Link>
         </li>
         {/* user signed in with username */}

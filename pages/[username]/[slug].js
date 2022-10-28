@@ -1,19 +1,21 @@
-import styles from '@styles/Post.module.css';
+import styles from '@styles/Post.module.css'
 
-import Link from 'next/link'
-import { useDocumentData } from 'react-firebase-hooks/firestore'
-import { useContext } from 'react'
+import AuthCheck from '@components/AuthCheck'
+import HeartButton from '@components/HeartButton'
+import PostContent from '@components/PostContent'
 import { getUserWithUsername, postToJSON } from '@lib/firebase'
 import {
-  doc,
-  getDocs,
-  getDoc,
   collectionGroup,
-  query,
-  limit,
+  doc,
+  getDoc,
+  getDocs,
   getFirestore,
+  limit,
+  query,
 } from 'firebase/firestore'
-import PostContent from '@components/PostContent';
+import Link from 'next/link'
+import { useContext } from 'react'
+import { useDocumentData } from 'react-firebase-hooks/firestore'
 
 export async function getStaticProps({ params }) {
   const { username, slug } = params
@@ -63,18 +65,24 @@ const Post = (props) => {
 
   const post = realtimePost || props.post
 
-
   return (
     <main className={styles.container}>
       <section>
-        <PostContent post={post}/>
+        <PostContent post={post} />
       </section>
-      <aside className='card'>
+      <aside className="card">
         <p>
           <strong>{post.heartCount || 0} ❤️</strong>
         </p>
-      </aside>
 
+        <AuthCheck fallback={
+          <Link href='/enter'>
+            <button>❤️ Sign up</button>
+          </Link>
+        }>
+          <HeartButton postRef={postRef} />
+        </AuthCheck>
+      </aside>
     </main>
   )
 }

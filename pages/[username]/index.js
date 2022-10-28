@@ -1,3 +1,4 @@
+// @ts-nocheck
 import PostFeed from '@components/PostFeed'
 import UserProfile from '@components/UserProfile'
 import { getUserWithUsername, postToJSON } from '@lib/firebase'
